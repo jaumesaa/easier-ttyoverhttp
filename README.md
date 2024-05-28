@@ -2,7 +2,7 @@
 ```shell
 wget https://raw.githubusercontent.com/jaumesaa/easier-ttyoverhttp/master/tty_over_http.py
 ```
-*esto es un fork de s4vitar, estamos?*
+esto es un fork de s4vitar, ¿estamos?
 --------------------------------------------
 En ocasiones cuando comprometemos un servidor web, hay reglas configuradas (**Ej: iptables**) que nos impiden obtener una Reverse Shell vía Netcat, Python, u otra utilidad.
 
