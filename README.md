@@ -2,6 +2,9 @@
 ```shell
 wget https://raw.githubusercontent.com/jaumesaa/easier-ttyoverhttp/master/tty_over_http.py
 ```
+```shell
+sudo python3 tty_over_http.py
+```
 *esto es un fork de s4vitar, ¿estamos?*
 --------------------------------------------
 Sometimes when we compromise a web server, there are configured rules (**Ex: iptables**) that prevent us from obtaining a Reverse Shell via Netcat, Python, or another utility.
