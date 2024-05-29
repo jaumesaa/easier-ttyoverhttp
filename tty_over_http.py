@@ -52,7 +52,7 @@ def SetupShell():
                 None
         return None
 
-url = input("Url with http(s) and .php: ")
+url = input("Url with http(s), .php and without '?'\nExample: full_url.com/shell.php\nUrl: : ")
 param_name = input("Name of the malicious php parameter: ")
 global stdin, stdout
 session = randrange(1000, 9999)
