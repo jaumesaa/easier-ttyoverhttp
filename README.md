@@ -18,5 +18,5 @@ Sometimes when we compromise a web server, there are configured rules (**Ex: ipt
 ?>
 ```
 
- After its execution, you'll have an interactive TTY!
+ After its execution, you'll have a tty that will allow you to execute commands that the firewall or other filters were filtering and will simulate commands like "cd.." or "pwd", to navigate between directories comfortably, JUST LIKE AN INTERACTIVE TTY!!
 
